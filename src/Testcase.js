@@ -13,7 +13,7 @@ class Testcase {
       }
     ];
 
-    this.testcase = testCase.concat(failures);
+    this['test-case'] = testCase.concat(failures);
   }
 }
 

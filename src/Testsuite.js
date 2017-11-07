@@ -16,16 +16,12 @@ class Testsuite {
         tests: (result.numPendingTests + result.numFailingTests + result.numPassingTests),
         failures: result.numFailingTests,
         time: (result.perfStats.end - result.perfStats.start) / 1000,
-        timestamp: new Date(result.perfStats.start).toISOString().slice(0, -5)
+        timestamp: new Date(result.perfStats.start).toISOString().slice(0, -5),
+        
       }
     };
 
-    this.testsuite = [suite, { properties: [] }]
-      .concat(
-        testcases,
-        { 'system-out': {} },
-        { 'system-err': {} }
-      );
+    this['test-suite'] = { results: [suite, testcases] };
   }
 }
 

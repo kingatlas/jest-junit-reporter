@@ -3,7 +3,7 @@ const xsd = require('libxml-xsd');
 const cwd = process.cwd();
 const reporter = require('../../index');
 const { failedCase, pendingCase, passingCase } = require('./fixtures/testcase');
-const junitXsd = fs.readFileSync(`${__dirname}/fixtures/junit.xsd`, {encoding: 'utf-8'});
+const nunitXsd = fs.readFileSync(`${__dirname}/fixtures/nunit.xsd`, {encoding: 'utf-8'});
 const mock = {
   "success": true,
   "startTime": Date.now(),
@@ -30,10 +30,10 @@ const mock = {
   ]
 };
 
-it('should produce a valid JUnit XML report', () => {
+it('should produce a valid NUnit XML report', () => {
   reporter(mock);
   const report = fs.readFileSync(`${cwd}/test-report.xml`, { encoding: 'utf-8' });
-  const schema = xsd.parse(junitXsd);
+  const schema = xsd.parse(nunitXsd);
   const errors = schema.validate(report);
   expect(errors).toBeNull();
 });

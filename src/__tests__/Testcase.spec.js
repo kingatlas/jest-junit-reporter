@@ -10,7 +10,7 @@ it('should produce a <testcase>', () => {
   };
   const result = new Testcase(testcase);
   const report = xml(result);
-  const expected = `<testcase classname="foo" name="should foo bar" time="0"></testcase>`;
+  const expected = `<test-case classname="foo" name="should foo bar" time="0"></test-case>`;
   expect(report).toEqual(expected);
 });
 
@@ -23,6 +23,6 @@ it('should produce a <failure>', () => {
   };
   const result = new Testcase(testcase);
   const report = xml(result);
-  const expected = `<testcase classname="foo" name="should foo bar" time="0"><failure message="Assertion error" type="AssertionError"></failure></testcase>`;
+  const expected = `<test-case classname="foo" name="should foo bar" time="0"><failure message="Assertion error" type="AssertionError"></failure></test-case>`;
   expect(report).toEqual(expected);
 });
