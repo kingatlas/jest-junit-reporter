@@ -1,23 +1,19 @@
 {
-  "name": "jest-junit-reporter",
-  "version": "1.1.0",
-  "description": "A JUnit test report formatter for Jest.",
+  "name": "jest-nunit-reporter",
+  "version": "1.0.0-pre1",
+  "description": "A NUnit test report formatter for Jest.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "keywords": [
     "jest",
-    "junit",
+    "nunit",
     "reporter"
   ],
-  "author": {
-    "name": "Michael Allen",
-    "email": "michael.lee.allen@gmail.com"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelleeallen/jest-junit-reporter.git"
+    "url": "https://github.com/kingatlas/jest-nunit-reportert"
   },
   "license": "MIT",
   "dependencies": {
