@@ -1,7 +1,6 @@
 const Testsuite = require('./Testsuite');
 const Environment = require('./Environment');
-
-Array.prototype.sum = function (selector) { return this.map(selector).reduce((a,b) => a+b); }
+const CultureInfo = require('./CultureInfo');
 
 class Testresults {
   constructor (results) {
@@ -9,11 +8,11 @@ class Testresults {
     var date = d.toISOString().substr(0, 10);
     var time = d.toISOString().substr(11, 8);
 
-    const total = results.testResults.sum(result => result.numPendingTests + result.numFailingTests + result.numPassingTests);
-    const failures = results.testResults.sum(result => result.numFailingTests);
-    const skipped = results.testResults.sum(result => result.numPendingTests);
+    const total = results.numTotalTests;
+    const failures = results.numFailedTests;
+    const skipped = results.numPendingTests;
 
-    this['test-results'] = [new Environment()].concat(results.testResults.map((result, i) => new Testsuite(i, result)).concat({
+    this['test-results'] = [new Environment(), new CultureInfo()].concat(results.testResults.map((result, i) => new Testsuite(i, result)).concat({
       _attr: {
         name: "jest results",
         date,

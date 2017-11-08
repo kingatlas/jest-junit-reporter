@@ -8,20 +8,16 @@ class Testsuite {
 
     let suite = {
       _attr: {
-        id,
         name: result.testFilePath,
-        errors: 0,
-        package: result.testFilePath,
-        hostname: 'localhost',
-        tests: (result.numPendingTests + result.numFailingTests + result.numPassingTests),
-        failures: result.numFailingTests,
         time: (result.perfStats.end - result.perfStats.start) / 1000,
-        timestamp: new Date(result.perfStats.start).toISOString().slice(0, -5),
-        
+        executed: ((result.numFailingTests+result.numPassingTests) > 0) ? 'True' : 'False',
+        success: (result.numFailingTests === 0) ? 'True' : 'False',
+        result: (result.numFailingTests === 0) ? 'Success' : 'Failure',
+        type: 'TestFixture'
       }
     };
 
-    this['test-suite'] = { results: [suite, testcases] };
+    this['test-suite'] = [suite, { results: testcases }];
   }
 }
 

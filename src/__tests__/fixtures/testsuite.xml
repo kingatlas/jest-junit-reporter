@@ -1,4 +1,4 @@
-<test-suite id="1" name="src/foo.js" errors="0" package="src/foo.js" hostname="localhost" tests="3" failures="1" time="5" timestamp="2017-01-10T19:21:08">
+<test-suite name="src/foo.js" time="5" executed="True" success="False" result="Failure" type="TestFixture">
   <results>
     <test-case classname="foo" name="should foo the bar" time="0">
       <failure message="Assertion error" type="AssertionError">
@@ -6,5 +6,5 @@
     </test-case>
     <test-case classname="foo" name="should foofoo the baz" time="0">
     </test-case>
-   </results>
+  </results>
 </test-suite>
