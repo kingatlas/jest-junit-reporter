@@ -1,8 +1,8 @@
 class Failure {
   constructor (message) {
     const lines = message.split('\n');
-    const msg = lines.filter(l => !l.startsWith('at ')).join('\n');
-    const stackTrace = lines.filter(l => l.startsWith('at ')).join('\n');
+    const msg = lines.filter(l => !/^\s*at /.test(l)).join('\n');
+    const stackTrace = lines.filter(l => /^\s*at /.test(l)).join('\n');
 
     this.failure = [
       {

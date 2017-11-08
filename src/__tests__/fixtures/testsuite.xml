@@ -3,8 +3,8 @@
     <test-case name="boo/foo should foo the bar" executed="True" result="Failure" time="0">
       <failure>
         <message>Assertion error</message>
-        <stack-trace>at Object.shallow (file.js:5:15)
-at ReactShallowRenderer._mountClassComponent (file2.js:182:37)</stack-trace>
+        <stack-trace>  at Object.shallow (file.js:5:15)
+  at ReactShallowRenderer._mountClassComponent (file2.js:182:37)</stack-trace>
       </failure>
     </test-case>
     <test-case name="boo/foo should foofoo the baz" executed="True" result="Success" time="0">

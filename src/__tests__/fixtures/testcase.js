@@ -4,8 +4,8 @@ module.exports = {
     status: 'failed',
     ancestorTitles: ['boo', 'foo'],
     failureMessages: [`Assertion error
-at Object.shallow (file.js:5:15)
-at ReactShallowRenderer._mountClassComponent (file2.js:182:37)`]
+  at Object.shallow (file.js:5:15)
+  at ReactShallowRenderer._mountClassComponent (file2.js:182:37)`]
   },
   pendingCase: {
     title: 'should foobar the baz',
