@@ -6,7 +6,7 @@ class Testcase {
     let testCase = [
       {
         _attr: {
-          name: result.title,
+          name: `${result.ancestorTitles.join('/')} ${result.title}`,
           executed: result.status !== 'pending' ? 'True' : 'False',
           result: result.status === 'passed' ? 'Success' : 'Failure',
           time: 0
