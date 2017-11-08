@@ -1,7 +1,9 @@
 <test-suite name="src/foo.js" time="5" executed="True" success="False" result="Failure" type="TestFixture">
   <results>
     <test-case name="should foo the bar" executed="True" result="Failure" time="0">
-      <failure message="Assertion error" type="AssertionError">
+      <failure>
+        <message>Assertion error</message>
+        <stack-trace>Assertion error</stack-trace>
       </failure>
     </test-case>
     <test-case name="should foofoo the baz" executed="True" result="Success" time="0">

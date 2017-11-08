@@ -1,11 +1,13 @@
 class Failure {
   constructor (message) {
-    this.failure = [{
-      _attr: {
-        message,
-        type: 'AssertionError'
+    this.failure = [
+      {
+        message
+      },
+      {
+        'stack-trace': message
       }
-    }];
+    ];
   }
 }
 
