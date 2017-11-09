@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kingatlas/jest-nunit-reporter.svg?branch=master)](https://travis-ci.org/kingatlas/jest-nunit-reporter)
+
 # jest-nunit-reporter
 A NUnit test reporter for Jest.
 
