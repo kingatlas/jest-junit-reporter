@@ -45,17 +45,19 @@ it('should return given test results', () => {
 
 describe('reporter file name', () => {
   const filename = 'another-report.xml';
+  const readPkg = require('read-pkg');
+  const originalSync = readPkg.sync;
 
   beforeEach(() => {
     // remove default and possible test report file if they exist.
     fs.unlink(`${cwd}/test-report.xml`);
     fs.unlink(`${cwd}/${filename}`);
-    process.env.TEST_REPORT_FILENAME = filename;
+    readPkg.sync = jest.fn().mockReturnValue({ jestNunitReporter: { outputFilename: filename} });
   });
 
   afterEach(() => {
     fs.unlink(`${cwd}/${filename}`);
-    delete process.env.TEST_REPORT_FILENAME;
+    readPkg.sync = originalSync;
   });
 
   it('should produce a report with desired file name', () => {
