@@ -23,7 +23,14 @@ For your Continuous Integration you can simply do:
 jest --ci --testResultsProcessor="./node_modules/jest-nunit-reporter
 ```
 
-The reporter will generate a `test-report.xml` file in the project root. If you need to specify a different location(e.g., for a CI server) then set the environment variable `TEST_REPORT_PATH` to the desired location. If you need to specify a different file name other than `test-report.xml`, you can set the environment variable `TEST_REPORT_FILENAME` to the desired file name.
+The reporter will generate a `test-report.xml` file in the project root. If you need to specify a different location(e.g., for a CI server) then set the paths in the `package.json` `jestNunitReporter` property:
+
+```json
+"jestNunitReporter": {
+  "outputPath": "reports/",
+  "outputFileName": "custom-report.xml"
+}
+```
 
 ## LICENSE
 [MIT](LICENSE)

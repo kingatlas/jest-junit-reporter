@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "read-pkg": "^3.0.0",
     "xml": "^1.0.1"
   },
   "devDependencies": {
