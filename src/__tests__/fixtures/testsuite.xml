@@ -1,4 +1,4 @@
-<test-suite name="src/foo.js" time="5" executed="True" success="False" result="Failure" type="TestFixture">
+<test-suite name="src/foo.bar.spec.js" time="5" executed="True" success="False" result="Failure" type="TestFixture">
   <results>
     <test-case name="boo/foo should foo the bar" executed="True" result="Failure" time="0">
       <failure>

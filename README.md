@@ -28,9 +28,13 @@ The reporter will generate a `test-report.xml` file in the project root. If you 
 ```json
 "jestNunitReporter": {
   "outputPath": "reports/",
-  "outputFileName": "custom-report.xml"
+  "outputFileName": "custom-report.xml",
 }
 ```
+
+There are other options for naming test names:   
+* `testSuiteNamePrefix`: Add prefix to test-suites names
+* `testSuiteNameFromAncestors`: Use ancestors root title (`describe`)
 
 ## LICENSE
 [MIT](LICENSE)
