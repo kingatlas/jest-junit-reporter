@@ -1,4 +1,6 @@
 const fs = require('fs');
+const path = require('path');
+const rimraf = require('rimraf');
 const xsd = require('libxml-xsd');
 const cwd = process.cwd();
 const reporter = require('../../index');
@@ -64,5 +66,12 @@ describe('reporter file name', () => {
     reporter(mock);
     expect(fs.existsSync(`${cwd}/test-report.xml`)).toBeFalsy();
     expect(fs.existsSync(`${cwd}/${filename}`)).toBeTruthy();
+  });
+
+  it('should create directory for output file is it does not exist', () => {
+    readPkg.sync = jest.fn().mockReturnValue({ jestNunitReporter: { outputPath: path.resolve(cwd, 'missing/dir') }});
+    reporter(mock);
+    expect(fs.existsSync(`${cwd}/missing/dir/test-report.xml`)).toBeTruthy();
+    rimraf.sync(`${cwd}/missing`);
   });
 });
