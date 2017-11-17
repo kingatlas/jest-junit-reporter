@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/kingatlas/jest-nunit-reporter.svg?branch=master)](https://travis-ci.org/kingatlas/jest-nunit-reporter)
+[![npm](https://img.shields.io/npm/v/jest-nunit-reporter.svg)](https://www.npmjs.com/package/jest-nunit-reporterd)
 
 # jest-nunit-reporter
 A NUnit test reporter for Jest.
