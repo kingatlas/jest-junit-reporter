@@ -33,7 +33,7 @@ The reporter will generate a `test-report.xml` file in the project root. If you 
 }
 ```
 
-There are other options for naming test names:   
+There are other options for naming test suites:   
 * `testSuiteNamePrefix`: Add prefix to test-suites names
 * `testSuiteNameFromAncestors`: Use ancestors root title (`describe`)
 
