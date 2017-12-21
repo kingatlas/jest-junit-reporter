@@ -32,6 +32,12 @@ const mock = {
   ]
 };
 
+function unlink(filename) {
+  if (fs.existsSync(filename)) {
+    fs.unlinkSync(filename);
+  }
+}
+
 it('should produce a valid NUnit XML report', () => {
   reporter(mock);
   const report = fs.readFileSync(`${cwd}/test-report.xml`, { encoding: 'utf-8' });
@@ -52,13 +58,13 @@ describe('reporter file name', () => {
 
   beforeEach(() => {
     // remove default and possible test report file if they exist.
-    fs.unlink(`${cwd}/test-report.xml`);
-    fs.unlink(`${cwd}/${filename}`);
+    unlink(`${cwd}/test-report.xml`);
+    unlink(`${cwd}/${filename}`);
     readPkg.sync = jest.fn().mockReturnValue({ jestNunitReporter: { outputFilename: filename} });
   });
 
   afterEach(() => {
-    fs.unlink(`${cwd}/${filename}`);
+    unlink(`${cwd}/${filename}`);
     readPkg.sync = originalSync;
   });
 
