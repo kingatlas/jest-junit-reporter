@@ -29,7 +29,7 @@ The reporter will generate a `test-report.xml` file in the project root. If you 
 ```json
 "jestNunitReporter": {
   "outputPath": "reports/",
-  "outputFileName": "custom-report.xml",
+  "outputFilename": "custom-report.xml",
 }
 ```
 
