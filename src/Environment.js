@@ -6,7 +6,7 @@ class Environment {
   
       this['environment'] = {
           _attr: {
-            'nunit-version': '2.4.0.0',
+            'nunit-version': '2.5.0.0',
             'clr-version': 'na',
             'os-version': os.release(),
             platform: os.platform(),
