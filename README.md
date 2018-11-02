@@ -14,14 +14,14 @@ In your `package.json` file include a `"jest"` config section and specify the `"
 ```json
 {
   "jest": {
-    "testResultsProcessor": "./node_modules/jest-nunit-reporter"
+    "testResultsProcessor": "jest-nunit-reporter"
   }
 }
 ```
 
 For your Continuous Integration you can simply do:
 ```shell
-jest --ci --testResultsProcessor="./node_modules/jest-nunit-reporter
+jest --ci --testResultsProcessor=jest-nunit-reporter
 ```
 
 The reporter will generate a `test-report.xml` file in the project root. If you need to specify a different location(e.g., for a CI server) then set the paths in the `package.json` `jestNunitReporter` property:
