@@ -9,7 +9,7 @@ class Testcase {
           name: `${result.ancestorTitles.join('/')} ${result.title}`,
           executed: result.status !== 'pending' ? 'True' : 'False',
           result: result.status === 'passed' ? 'Success' : 'Failure',
-          time: 0
+          time: result.duration / 1000
         }
       }
     ];
